@@ -9,8 +9,8 @@ class Program
     {
         var garages = new List<Garage>
         {
-            new Garage(new Car(100)),
-            new Garage(new TinyCar(20)),
+            new Garage(new TinyCar(100)),
+            new Garage(new HugeCar(30)),
         };
 
         foreach (var item in garages)
@@ -23,8 +23,8 @@ class Program
 
 public abstract class Vehicle
 {
-    public virtual float FrameHp { get; set; }
-    protected virtual float BaseSpeed { get; init; }
+    public float FrameHp { get; set; }
+    protected float BaseSpeed { get; init; }
     public float CurrentSpeed { get; set; }
     protected abstract string? Message { get; set; } 
     
@@ -37,29 +37,23 @@ public abstract class Vehicle
     }
 
     public bool isAbleToMove { get; set; }
- 
 }
 
-public class Car : Vehicle, IMovableXAxis, IMovableZAxis
+public abstract class Car : Vehicle, IMovableXAxis, IMovableZAxis
 {
-    public bool isAbleToMove { get; set; }
+    protected override string? Message { get; set; } = "From Car";
+    public new bool isAbleToMove { get; set; }
     public bool isAbleToForwordMove { get; set; }
     public bool isAbleToBackMove { get; set; }
-
     public bool isAbleToLeftMove { get; set; }
     public bool isAbleToRightMove { get; set; }
-    protected override string? Message { get; set; } = "From Car";
-    
-    public Car(float speed)
+
+    protected Car(float speed)
     {
         BaseSpeed = speed;
     }
-
     
-    public virtual void Move()
-    {
-        Console.WriteLine("Выезжаю с гаража громко");
-    }
+    public virtual void Move() {}
 }
 
 public class TinyCar : Car
@@ -68,22 +62,40 @@ public class TinyCar : Car
     
     public TinyCar(float speed) : base(speed) {}
     
-    
-    
     public override void Move()
     {
         Console.WriteLine("Выезжаю с гаража тихо");
     }
 }
 
-public class Bus : Vehicle
+public class HugeCar : Car
+{
+    protected override string? Message { get; set; } = "From TinyCar";
+
+    public HugeCar(float speed) : base(speed) {}
+    
+    public override void Move()
+    {
+        Console.WriteLine("Выезжаю с гаража громко");
+    }
+}
+
+public class RoboCar : Vehicle, IMovableXAxis, IMovableYAxis, IMovableZAxis
 {
     protected override string? Message { get; set; } = "From Bus";
-    
-    public Bus(float speed)
+    public bool isAbleToForwordMove { get; set; }
+    public bool isAbleToBackMove { get; set; }
+    public bool isAbleToUpMove { get; set; }
+    public bool isAbleToDownMove { get; set; }
+    public bool isAbleToLeftMove { get; set; }
+    public bool isAbleToRightMove { get; set; }
+
+    protected RoboCar(float speed)
     {
         BaseSpeed = speed;
     }
+
+    public virtual void Move() {}
 }
 
 public class Garage 
@@ -99,7 +111,6 @@ public class Garage
 public interface IMovable
 {
     public bool isAbleToMove { get; set; }
-
     public void Move();
 }
 
@@ -107,15 +118,12 @@ public interface IMovableXAxis : IMovable
 {
     public bool isAbleToForwordMove { get; set; }
     public bool isAbleToBackMove { get; set; }
-    
 }
 
 public interface IMovableZAxis : IMovable
 {
     public bool isAbleToLeftMove { get; set; }
     public bool isAbleToRightMove { get; set; }
-    
-
 }
 
 public interface IMovableYAxis : IMovable
