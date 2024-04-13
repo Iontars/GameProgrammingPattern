@@ -1,4 +1,4 @@
-﻿using Console = System.Console;
+﻿using static System.Console;
 
 namespace DependencyInversion;
 
@@ -6,17 +6,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        Switch @switch = new Switch();
+        Switcher switcher = new Switcher();
         Door door = new Door();
-
-        for (int i = 0; i < 5; i++)
-        {
-            @switch.Toggle(door);
-        }
+        RoomLight roomLight = new RoomLight();
+        
+        switcher.Toggle(door);
+        switcher.Toggle(roomLight);
+        switcher.Toggle(roomLight);
+        switcher.Toggle(door);
+        WriteLine("Пока");
     }
 }
 
-public class Switch
+public class Switcher
 {
     private ISwitchable? client;
     public void Toggle(ISwitchable obj)
@@ -40,12 +42,12 @@ public class Door : ISwitchable
     public void Activate()
     {
         IsActive = true;
-        Console.WriteLine("Дверь открыта");
+        WriteLine("Дверь открыта");
     }
     public void Deactivate()
     {
         IsActive = false;
-        Console.WriteLine("Дверь закрыта");
+        WriteLine("Дверь закрыта");
     }
 }
 
@@ -56,13 +58,13 @@ public class RoomLight : ISwitchable
     public void Activate()
     {
         IsActive = true;
-        Console.WriteLine("Свет включён");
+        WriteLine("Свет включён");
     }
 
     public void Deactivate()
     {
         IsActive = true;
-        Console.WriteLine("Свет выключен");
+        WriteLine("Свет выключен");
     }
 }
 
