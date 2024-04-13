@@ -1,5 +1,5 @@
-﻿using System.Numerics;
-using System.Text;
+﻿using System.Text;
+using static System.Console;
 
 namespace Liskov;
 
@@ -36,7 +36,7 @@ public abstract class Vehicle
     public void Report()
     {
         builder.Append($"{BaseSpeed} {Message}");
-        Console.WriteLine(builder.ToString());
+        WriteLine(builder.ToString());
     }
 
     public bool isAbleToMove { get; set; }
@@ -70,7 +70,7 @@ internal class TinyCar : Car
     
     public override void Move()
     {
-        Console.WriteLine("Выезжаю с гаража тихо");
+        WriteLine("Выезжаю с гаража тихо");
     }
 }
 
@@ -82,7 +82,7 @@ internal class HugeCar : Car
     
     public override void Move()
     {
-        Console.WriteLine("Выезжаю с гаража громко");
+        WriteLine("Выезжаю с гаража громко");
     }
 
     public void Jump()

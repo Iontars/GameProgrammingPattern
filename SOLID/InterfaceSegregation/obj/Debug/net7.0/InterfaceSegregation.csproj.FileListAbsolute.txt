@@ -1,0 +1,15 @@
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\bin\Debug\net7.0\InterfaceSegregation.exe
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\bin\Debug\net7.0\InterfaceSegregation.deps.json
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\bin\Debug\net7.0\InterfaceSegregation.runtimeconfig.json
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\bin\Debug\net7.0\InterfaceSegregation.dll
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\bin\Debug\net7.0\InterfaceSegregation.pdb
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\obj\Debug\net7.0\InterfaceSegregation.csproj.AssemblyReference.cache
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\obj\Debug\net7.0\InterfaceSegregation.GeneratedMSBuildEditorConfig.editorconfig
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\obj\Debug\net7.0\InterfaceSegregation.AssemblyInfoInputs.cache
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\obj\Debug\net7.0\InterfaceSegregation.AssemblyInfo.cs
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\obj\Debug\net7.0\InterfaceSegregation.csproj.CoreCompileInputs.cache
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\obj\Debug\net7.0\InterfaceSegregation.dll
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\obj\Debug\net7.0\refint\InterfaceSegregation.dll
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\obj\Debug\net7.0\InterfaceSegregation.pdb
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\obj\Debug\net7.0\InterfaceSegregation.genruntimeconfig.cache
+J:\GIT\GameProgrammingPattern\SOLID\InterfaceSegregation\obj\Debug\net7.0\ref\InterfaceSegregation.dll
