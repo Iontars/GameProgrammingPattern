@@ -16,7 +16,7 @@ class Program
     }
 }
 
-public class Switch 
+public class Switch
 {
     private ISwitchable? client;
     public void Toggle(ISwitchable obj)
@@ -40,12 +40,29 @@ public class Door : ISwitchable
     public void Activate()
     {
         IsActive = true;
-        Console.WriteLine("The door is open.");
+        Console.WriteLine("Дверь открыта");
     }
     public void Deactivate()
     {
         IsActive = false;
-        Console.WriteLine("The door is closed.");
+        Console.WriteLine("Дверь закрыта");
+    }
+}
+
+public class RoomLight : ISwitchable
+{
+    public bool IsActive { get; set; }
+
+    public void Activate()
+    {
+        IsActive = true;
+        Console.WriteLine("Свет включён");
+    }
+
+    public void Deactivate()
+    {
+        IsActive = true;
+        Console.WriteLine("Свет выключен");
     }
 }
 
@@ -55,3 +72,4 @@ public interface ISwitchable
     public void Activate();
     public void Deactivate();
 }
+
