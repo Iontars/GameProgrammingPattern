@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Liskov;
 
-class Program
+internal class Program
 {
     static void Main(string[] args)
     {
@@ -30,7 +30,7 @@ public abstract class Vehicle
     
     protected StringBuilder builder = new ();
 
-    public virtual void Report()
+    public void Report()
     {
         builder.Append($"{BaseSpeed} {Message}");
         Console.WriteLine(builder.ToString());
@@ -39,7 +39,7 @@ public abstract class Vehicle
     public bool isAbleToMove { get; set; }
 }
 
-public abstract class Car : Vehicle, IMovableXAxis, IMovableZAxis
+internal abstract class Car : Vehicle, IMovableXAxis, IMovableZAxis
 {
     protected override string? Message { get; set; } = "From Car";
     public new bool isAbleToMove { get; set; }
@@ -48,35 +48,40 @@ public abstract class Car : Vehicle, IMovableXAxis, IMovableZAxis
     public bool isAbleToLeftMove { get; set; }
     public bool isAbleToRightMove { get; set; }
 
-    protected Car(float speed)
+    internal Car(float speed)
     {
         BaseSpeed = speed;
     }
     
-    public virtual void Move() {}
+    public void Move() {}
 }
 
-public class TinyCar : Car
+internal class TinyCar : Car
 {
     protected override string? Message { get; set; } = "From TinyCar";
     
-    public TinyCar(float speed) : base(speed) {}
+    internal TinyCar(float speed) : base(speed) {}
     
-    public override void Move()
+    public void Move()
     {
         Console.WriteLine("Выезжаю с гаража тихо");
     }
 }
 
-public class HugeCar : Car
+internal class HugeCar : Car
 {
     protected override string? Message { get; set; } = "From TinyCar";
 
-    public HugeCar(float speed) : base(speed) {}
+    internal HugeCar(float speed) : base(speed) {}
     
-    public override void Move()
+    public void Move()
     {
         Console.WriteLine("Выезжаю с гаража громко");
+    }
+
+    public void Jump()
+    {
+        
     }
 }
 
@@ -90,7 +95,12 @@ public class RoboCar : Vehicle, IMovableXAxis, IMovableYAxis, IMovableZAxis
     public bool isAbleToLeftMove { get; set; }
     public bool isAbleToRightMove { get; set; }
 
-    protected RoboCar(float speed)
+    public RoboCar()
+    {
+        
+    }
+    
+    internal RoboCar(float speed)
     {
         BaseSpeed = speed;
     }
@@ -98,11 +108,11 @@ public class RoboCar : Vehicle, IMovableXAxis, IMovableYAxis, IMovableZAxis
     public virtual void Move() {}
 }
 
-public class Garage 
+internal class Garage 
 {
-    public Car CurentVehicle { get; set; }
+    internal Car CurentVehicle { get; set; }
     
-    public Garage(Car vehicle)
+    internal Garage(Car vehicle)
     {
         CurentVehicle = vehicle;
     }
