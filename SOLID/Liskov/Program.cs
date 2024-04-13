@@ -30,6 +30,9 @@ public abstract class Vehicle
     
     protected StringBuilder builder = new ();
 
+    // можно не помечать как virtual, так как в производных классах в принципе отсутсвуте описание метода Report, производные
+    // классы, при вызове в них методов Report, автоматически перезапишут метод базового класса как если бы использовалась конструкция
+    // override/virtual
     public void Report()
     {
         builder.Append($"{BaseSpeed} {Message}");
@@ -53,7 +56,10 @@ internal abstract class Car : Vehicle, IMovableXAxis, IMovableZAxis
         BaseSpeed = speed;
     }
     
-    public void Move() {}
+    // Если в производных классах Car методы Move() имеют описание, даже с пустым телом метода, при вызое Move()
+    // с производных классов через апкаст, всегда будет вызываться метод из базового класса, поэтому, что бы получить
+    // доступ к методам производных классов необходимо использовать конструкцию abstract/override или virtual/override
+    public abstract void Move();
 }
 
 internal class TinyCar : Car
@@ -62,7 +68,7 @@ internal class TinyCar : Car
     
     internal TinyCar(float speed) : base(speed) {}
     
-    public void Move()
+    public override void Move()
     {
         Console.WriteLine("Выезжаю с гаража тихо");
     }
@@ -74,7 +80,7 @@ internal class HugeCar : Car
 
     internal HugeCar(float speed) : base(speed) {}
     
-    public void Move()
+    public override void Move()
     {
         Console.WriteLine("Выезжаю с гаража громко");
     }
@@ -85,7 +91,7 @@ internal class HugeCar : Car
     }
 }
 
-public class RoboCar : Vehicle, IMovableXAxis, IMovableYAxis, IMovableZAxis
+public abstract class RoboCar : Vehicle, IMovableXAxis, IMovableYAxis, IMovableZAxis
 {
     protected override string? Message { get; set; } = "From Bus";
     public bool isAbleToForwordMove { get; set; }
