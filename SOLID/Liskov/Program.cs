@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Runtime.CompilerServices;
+using System.Text;
 using static System.Console;
 
 namespace Liskov;
@@ -9,8 +10,8 @@ internal class Program
     {
         var garages = new List<Garage>
         {
-            new Garage(new TinyCar(100)),
-            new Garage(new HugeCar(30)),
+            new Garage(new TinyCar(10, 100 )),
+            new Garage(new HugeCar(30, 30)),
         };
 
         foreach (var item in garages)
@@ -23,8 +24,14 @@ internal class Program
 
 public abstract class Vehicle
 {
-    public float FrameHp { get; set; }
-    protected float BaseSpeed { get; init; }
+    protected Vehicle(float frameHp, float baseSpeed)
+    {
+        FrameHp = frameHp;
+        BaseSpeed = baseSpeed;
+    }
+
+    public float FrameHp { get; private set; }
+    protected float BaseSpeed { get; private set; }
     public float CurrentSpeed { get; set; }
     protected abstract string? Message { get; set; } 
     
@@ -35,6 +42,7 @@ public abstract class Vehicle
     // override/virtual
     public void Report()
     {
+        Message = "скорость " + GetType().FullName;
         builder.Append($"{BaseSpeed} {Message}");
         WriteLine(builder.ToString());
     }
@@ -44,41 +52,42 @@ public abstract class Vehicle
 
 internal abstract class Car : Vehicle, IMovableXAxis, IMovableZAxis
 {
-    protected override string? Message { get; set; } = "From Car";
+    protected override string? Message { get; set; }
     public new bool isAbleToMove { get; set; }
-    public bool isAbleToForwordMove { get; set; }
+    public bool isAbleToForwardMove { get; set; }
     public bool isAbleToBackMove { get; set; }
     public bool isAbleToLeftMove { get; set; }
     public bool isAbleToRightMove { get; set; }
-
-    internal Car(float speed)
-    {
-        BaseSpeed = speed;
-    }
     
     // Если в производных классах Car методы Move() имеют описание, даже с пустым телом метода, при вызое Move()
     // с производных классов через апкаст, всегда будет вызываться метод из базового класса, поэтому, что бы получить
     // доступ к методам производных классов необходимо использовать конструкцию abstract/override или virtual/override
     public abstract void Move();
+
+    protected Car(float frameHp, float baseSpeed) : base(frameHp, baseSpeed)
+    {
+        
+    }
 }
 
 internal class TinyCar : Car
 {
     protected override string? Message { get; set; } = "From TinyCar";
     
-    internal TinyCar(float speed) : base(speed) {}
-    
     public override void Move()
     {
         WriteLine("Выезжаю с гаража тихо");
+    }
+
+    public TinyCar(float frameHp, float baseSpeed) : base(frameHp, baseSpeed)
+    {
+        
     }
 }
 
 internal class HugeCar : Car
 {
     protected override string? Message { get; set; } = "From TinyCar";
-
-    internal HugeCar(float speed) : base(speed) {}
     
     public override void Move()
     {
@@ -89,29 +98,32 @@ internal class HugeCar : Car
     {
         
     }
+
+    public HugeCar(float frameHp, float baseSpeed) : base(frameHp, baseSpeed)
+    {
+        
+    }
+    
 }
 
 public abstract class RoboCar : Vehicle, IMovableXAxis, IMovableYAxis, IMovableZAxis
 {
     protected override string? Message { get; set; } = "From Bus";
-    public bool isAbleToForwordMove { get; set; }
+    public bool isAbleToForwardMove { get; set; }
     public bool isAbleToBackMove { get; set; }
     public bool isAbleToUpMove { get; set; }
     public bool isAbleToDownMove { get; set; }
     public bool isAbleToLeftMove { get; set; }
     public bool isAbleToRightMove { get; set; }
 
-    public RoboCar()
+    
+
+    public virtual void Move() {}
+
+    protected RoboCar(float frameHp, float baseSpeed) : base(frameHp, baseSpeed)
     {
         
     }
-    
-    internal RoboCar(float speed)
-    {
-        BaseSpeed = speed;
-    }
-
-    public virtual void Move() {}
 }
 
 internal class Garage 
@@ -132,7 +144,7 @@ public interface IMovable
 
 public interface IMovableXAxis : IMovable
 {
-    public bool isAbleToForwordMove { get; set; }
+    public bool isAbleToForwardMove { get; set; }
     public bool isAbleToBackMove { get; set; }
 }
 

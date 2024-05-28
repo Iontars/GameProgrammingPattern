@@ -3,7 +3,6 @@ J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\bin\Debug\net7.0\OpenClo
 J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\bin\Debug\net7.0\OpenClosedPrinciple.runtimeconfig.json
 J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\bin\Debug\net7.0\OpenClosedPrinciple.dll
 J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\bin\Debug\net7.0\OpenClosedPrinciple.pdb
-J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\obj\Debug\net7.0\OpenClosedPrinciple.csproj.AssemblyReference.cache
 J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\obj\Debug\net7.0\OpenClosedPrinciple.GeneratedMSBuildEditorConfig.editorconfig
 J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\obj\Debug\net7.0\OpenClosedPrinciple.AssemblyInfoInputs.cache
 J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\obj\Debug\net7.0\OpenClosedPrinciple.AssemblyInfo.cs
@@ -13,3 +12,4 @@ J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\obj\Debug\net7.0\refint\
 J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\obj\Debug\net7.0\OpenClosedPrinciple.pdb
 J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\obj\Debug\net7.0\OpenClosedPrinciple.genruntimeconfig.cache
 J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\obj\Debug\net7.0\ref\OpenClosedPrinciple.dll
+J:\GIT\GameProgrammingPattern\SOLID\OpenClosedPrinciple\obj\Debug\net7.0\OpenClosedPrinciple.sourcelink.json
