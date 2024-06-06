@@ -3,7 +3,6 @@ J:\GIT\GameProgrammingPattern\SOLID\Liskov\bin\Debug\net7.0\Liskov.deps.json
 J:\GIT\GameProgrammingPattern\SOLID\Liskov\bin\Debug\net7.0\Liskov.runtimeconfig.json
 J:\GIT\GameProgrammingPattern\SOLID\Liskov\bin\Debug\net7.0\Liskov.dll
 J:\GIT\GameProgrammingPattern\SOLID\Liskov\bin\Debug\net7.0\Liskov.pdb
-J:\GIT\GameProgrammingPattern\SOLID\Liskov\obj\Debug\net7.0\Liskov.csproj.AssemblyReference.cache
 J:\GIT\GameProgrammingPattern\SOLID\Liskov\obj\Debug\net7.0\Liskov.GeneratedMSBuildEditorConfig.editorconfig
 J:\GIT\GameProgrammingPattern\SOLID\Liskov\obj\Debug\net7.0\Liskov.AssemblyInfoInputs.cache
 J:\GIT\GameProgrammingPattern\SOLID\Liskov\obj\Debug\net7.0\Liskov.AssemblyInfo.cs
@@ -13,3 +12,4 @@ J:\GIT\GameProgrammingPattern\SOLID\Liskov\obj\Debug\net7.0\refint\Liskov.dll
 J:\GIT\GameProgrammingPattern\SOLID\Liskov\obj\Debug\net7.0\Liskov.pdb
 J:\GIT\GameProgrammingPattern\SOLID\Liskov\obj\Debug\net7.0\Liskov.genruntimeconfig.cache
 J:\GIT\GameProgrammingPattern\SOLID\Liskov\obj\Debug\net7.0\ref\Liskov.dll
+J:\GIT\GameProgrammingPattern\SOLID\Liskov\obj\Debug\net7.0\Liskov.sourcelink.json
