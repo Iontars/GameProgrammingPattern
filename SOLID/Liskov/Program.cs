@@ -92,6 +92,7 @@ internal class HugeCar : Car
     public override void Move()
     {
         WriteLine("Выезжаю с гаража громко");
+        
     }
 
     public void Jump()
